@@ -11,6 +11,7 @@ class CreateFromCSV :
 	def create(self) :
 		with open(self.file_path,'r') as csvfile :
 			spamreader = csv.reader(csvfile, delimiter = ',')
+			
 			if self.file_path.find("installations") >= 0 :
 				installations = []
 				for row in spamreader :
