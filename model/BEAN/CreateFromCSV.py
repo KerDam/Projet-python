@@ -1,7 +1,5 @@
-from Installation import Installation
-from Activite import Activite
-from Equipement import Equipement
 import csv
+from Data import Data
 
 class CreateFromCSV:
     @staticmethod
@@ -18,3 +16,12 @@ class CreateFromCSV:
                     print ("La clé " + i + "n'existe pas")
             result.append(dic)
         return result
+
+    @staticmethod
+    def addDataBase(self,data):
+        array = CreateFromCSV.create(data)
+        for dic in array:
+            request = "Insert into" + data.getNomTable() + "values ("
+            for value in dic.values():
+                request += value
+            print request
