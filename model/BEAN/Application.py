@@ -16,6 +16,7 @@ from Data import Data
 
 attributsEquipement = ["ComInsee", "ComLib", "InsNumeroInstall", "InsNom", "EquipementId", "EquNom", "EquNomBatiment", "EquipementTypeLib", "EquipementFiche", "FamilleFicheLib"]
 dataEquipement = Data("../../donnees/equipements.csv", "equipements", attributsEquipement)
+csv = CreateFromCSV()
+#csv.createTables(dataEquipement)
+csv.addDataBase(dataEquipement)
 
-#CreateFromCSV.addDataBase(dataEquipement)
-CreateFromCSV.createTables(dataEquipement)
