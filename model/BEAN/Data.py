@@ -7,11 +7,11 @@ class Data :
 		self.attributs = attributs
 
 
-	def getFichier() :
+	def getFichier(self) :
 		return self.fichier
 
-	def getNomTable() :
+	def getNomTable(self) :
 		return self.nomTable
 
-	def getAttributs() :
+	def getAttributs(self) :
 		return self.attributs

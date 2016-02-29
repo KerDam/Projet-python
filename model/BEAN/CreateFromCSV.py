@@ -1,6 +1,5 @@
 import csv
 from Data import Data
-from DAO import DAO
 
 class CreateFromCSV:
 
@@ -9,12 +8,12 @@ class CreateFromCSV:
 
     @staticmethod
     def create(data):
-        dataFile = open(data.getFichier, "r")
+        dataFile = open(data.getFichier(), "r")
         parserDict = csv.DictReader(dataFile)
         result = []
         for row in parserDict:
             dic ={}
-            for i in data.getAttributs:
+            for i in data.getAttributs():
                 try:
                     dic[i] = row[i]
                 except KeyError:
@@ -30,12 +29,12 @@ class CreateFromCSV:
                 request += value +", "
             request = request[:len(request)-2]
             request += ")"
-            print request
+            print (request + '\n')
 
-    def createDataBase(data):
+    def createTables(data):
         request = "Create table " + data.getNomTable() + "("
-        for i in data.getAttributs()
+        for i in data.getAttributs():
             request += i + "varchar(255),"
-        request = request[:len(request)-2]
+        request = request[:len(request)-1]
         request += ")"
-        print request
+        print (request)

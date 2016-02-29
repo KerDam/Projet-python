@@ -15,6 +15,7 @@ from Data import Data
 # dataActivite = new Data("activites", "activites", attributsActivite)
 
 attributsEquipement = ["ComInsee", "ComLib", "InsNumeroInstall", "InsNom", "EquipementId", "EquNom", "EquNomBatiment", "EquipementTypeLib", "EquipementFiche", "FamilleFicheLib"]
-dataEquipement = new Data("../../donnees/equipements.csv", "equipements", attributsEquipement)
+dataEquipement = Data("../../donnees/equipements.csv", "equipements", attributsEquipement)
 
-CreateFromCSV.addDataBase(dataEquipement)
+#CreateFromCSV.addDataBase(dataEquipement)
+CreateFromCSV.createTables(dataEquipement)
