@@ -1,9 +1,14 @@
 import csv
 from Data import Data
+from DAO import DAO
 
 class CreateFromCSV:
+
+    def __init__(self,db):
+        self.db = db
+
     @staticmethod
-    def create(self, data):
+    def create(data):
         dataFile = open(data.getFichier, "r")
         parserDict = csv.DictReader(dataFile)
         result = []
@@ -17,11 +22,20 @@ class CreateFromCSV:
             result.append(dic)
         return result
 
-    @staticmethod
-    def addDataBase(self,data):
+    def addDataBase(data):
         array = CreateFromCSV.create(data)
         for dic in array:
             request = "Insert into" + data.getNomTable() + "values ("
             for value in dic.values():
-                request += value
+                request += value +", "
+            request = request[:len(request)-2]
+            request += ")"
             print request
+
+    def createDataBase(data):
+        request = "Create table " + data.getNomTable() + "("
+        for i in data.getAttributs()
+            request += i + "varchar(255),"
+        request = request[:len(request)-2]
+        request += ")"
+        print request
