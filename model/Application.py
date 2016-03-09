@@ -23,12 +23,12 @@ dataActivite = Data("../donnees/activites.csv", "activites", attributsActivite)
 dataInstallation = Data("../donnees/installations.csv", "installations", attributsInstallation)
 
 csv = CreateFromCSV()
-# csv.createTables(dataEquipement)
-# csv.addDataBase(dataEquipement)
+csv.createTables(dataEquipement)
+csv.addDataBase(dataEquipement)
 
-# csv.createTables(dataActivite)
-# csv.addDataBase(dataActivite)
+csv.createTables(dataActivite)
+csv.addDataBase(dataActivite)
 
-# csv.createTables(dataInstallation)
-# csv.addDataBase(dataInstallation)
+csv.createTables(dataInstallation)
+csv.addDataBase(dataInstallation)
 

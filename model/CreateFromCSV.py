@@ -32,6 +32,7 @@ class CreateFromCSV:
             request += ")"
             print (request)
             self.db.insert(request)
+        self.db.commit()
 
 
     def createTables(self,data):
@@ -42,3 +43,4 @@ class CreateFromCSV:
         request += ")"
         print (request)
         self.db.insert(request)
+        self.db.commit()
