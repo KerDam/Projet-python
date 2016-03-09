@@ -1,5 +1,5 @@
 from bottle.bottle import route, run, debug, template
-from traitement import traitement
+from traitement import Traitement
 
 @route('/test')
 def test():
@@ -7,7 +7,7 @@ def test():
 
 @route('/')
 def index():
-    t = traitement()
+    t = Traitement()
     activites = t.getActivites()
     villes = t.getVilles()
     output = template('index', activites = activites, villes = villes)

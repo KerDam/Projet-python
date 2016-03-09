@@ -32,10 +32,11 @@ class Dao :
         
     def commit(self):
         self.connexion.commit()
+        self.deconnexion()
 
     def select(self,request):
-        if self.connexion == None:
-            self.connexionDb()
+        self.connexionDb()
         cursor = self.connexion.cursor()
         cursor.execute(request)
+        self.deconnexion()
         return cursor.fetchall()
