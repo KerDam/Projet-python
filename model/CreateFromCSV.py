@@ -13,10 +13,10 @@ class CreateFromCSV:
         parserDict = csv.DictReader(dataFile)
         result = []
         for row in parserDict:
-            dic ={}
+            dic =[]
             for i in data.getAttributs():
                 try:
-                    dic[i] = row[i]
+                    dic.append(row[i])
                 except KeyError:
                     print ("La clé " + i + "n'existe pas")
             result.append(dic)
@@ -26,7 +26,7 @@ class CreateFromCSV:
         array = CreateFromCSV.create(data)
         for dic in array:
             request = "Insert into " + data.getNomTable() + " values ("
-            for value in dic.values():
+            for value in dic:
                 request += "\"" + value.replace("\"","") +"\", "
             request = request[:len(request)-2]
             request += ")"
