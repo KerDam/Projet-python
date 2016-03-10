@@ -1,4 +1,4 @@
-from bottle.bottle import route, run, debug, template
+from bottle.bottle import route, run, debug, template, post, request
 from traitement import Traitement
 
 @route('/test')
@@ -13,11 +13,12 @@ def index():
     output = template('index', activites = activites, villes = villes)
     return output
 
-@route('/result', method='POST')
+@route('/result', method = 'POST')
 def result():
 	activite = request.forms.get('activite')
 	ville = request.forms.get('ville')
 	t = Traitement()
-	installations = t.getInstallations(ativite, ville)
+	installations = t.getInstallations(activite, ville)
+	output = template('result', installations = installations)
 
 run(host="localhost", port=8000, debug=True)
