@@ -13,4 +13,11 @@ def index():
     output = template('index', activites = activites, villes = villes)
     return output
 
+@route('/result', method='POST')
+def result():
+	activite = request.forms.get('activite')
+	ville = request.forms.get('ville')
+	t = Traitement()
+	installations = t.getInstallations(ativite, ville)
+
 run(host="localhost", port=8000, debug=True)

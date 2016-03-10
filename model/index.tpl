@@ -6,7 +6,7 @@
 	%end
 </select>
 <tr/>
-<select name="activite">
+<select name="ville">
 	%for ville in villes:
 	<option value="{{ville[0]}}">{{ville[1]}}</option>
 	%end

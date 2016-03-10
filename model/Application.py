@@ -7,12 +7,7 @@ from Data import Data
 	- on va chercher les informations dans le fichier installations.csv
 	- on stock les informations dans la table installations de la base de données
 	- les différents attributs sont précisés dans attributsInstallation """
-
-#attributsInstallation = ["Nom usuel de l'installation", "Numéro de l'installation", "Nom de la commune", "Code INSEE", "Code postal", "Nom du lieu dit", "Numero de la voie", "Nom de la voie", "location", "Longitude", "Latitude"]
-#dataInstallation = new Data("installations", "installations", attributsInstallation)
-
-# attributsActivite = ["ComInsee", "ComLib", "EquipementId", "EquNbEquIdentique", "ActCode", "ActLib", "EquActivitePraticable", "EquActivitePratique", "EquActiviteSalleSpe", "ActNivLib"]
-# dataActivite = new Data("activites", "activites", attributsActivite)
+	
 
 attributsEquipement = ["ComInsee", "ComLib", "InsNumeroInstall", "InsNom", "EquipementId", "EquNom", "EquNomBatiment", "EquipementTypeLib", "EquipementFiche", "FamilleFicheLib"]
 attributsActivite = ["ComInsee","ComLib","EquipementId","EquNbEquIdentique","ActCode","ActLib","EquActivitePraticable","EquActivitePratique","EquActiviteSalleSpe","ActNivLib"]
@@ -22,13 +17,13 @@ dataEquipement = Data("../donnees/equipements.csv", "equipements", attributsEqui
 dataActivite = Data("../donnees/activites.csv", "activites", attributsActivite)
 dataInstallation = Data("../donnees/installations.csv", "installations", attributsInstallation)
 
-csv = CreateFromCSV()
-csv.createTables(dataEquipement)
-csv.addDataBase(dataEquipement)
+#csv = CreateFromCSV()
+#csv.createTables(dataEquipement)
+#csv.addDataBase(dataEquipement)
 
 # csv.createTables(dataActivite)
 # csv.addDataBase(dataActivite)
 
-csv.createTables(dataInstallation)
-csv.addDataBase(dataInstallation)
+#csv.createTables(dataInstallation)
+#csv.addDataBase(dataInstallation)
 
