@@ -17,24 +17,17 @@ dataEquipement = Data("../donnees/equipements.csv", "equipements", attributsEqui
 dataActivite = Data("../donnees/activites.csv", "activites", attributsActivite)
 dataInstallation = Data("../donnees/installations.csv", "installations", attributsInstallation)
 
-<<<<<<< HEAD
+
 csv = CreateFromCSV()
 csv.createTables(dataEquipement)
 csv.addDataBase(dataEquipement)
-=======
-#csv = CreateFromCSV()
-#csv.createTables(dataEquipement)
-#csv.addDataBase(dataEquipement)
->>>>>>> ee46ef855b23dbd4ddbb1a691ee2ffb78c667077
+
 
 csv.createTables(dataActivite)
 csv.addDataBase(dataActivite)
 
-<<<<<<< HEAD
+
 csv.createTables(dataInstallation)
 csv.addDataBase(dataInstallation)
-=======
-#csv.createTables(dataInstallation)
-#csv.addDataBase(dataInstallation)
->>>>>>> ee46ef855b23dbd4ddbb1a691ee2ffb78c667077
+
 
