@@ -14,11 +14,18 @@ class CreateFromCSV:
         parserDict = csv.DictReader(dataFile, escapechar='\\', doublequote=True)
         result = []
         for row in parserDict:
+<<<<<<< HEAD
             array = []
             for i in data.getAttributs():
                 try:
                     tmp = row[i[0]].replace (" ", "")
                     array.append(tmp if tmp.isnumeric() else "\"" + tmp.replace("\"", "\\\"") + "\"")
+=======
+            dic =[]
+            for i in data.getAttributs():
+                try:
+                    dic.append(row[i])
+>>>>>>> ee46ef855b23dbd4ddbb1a691ee2ffb78c667077
                 except KeyError:
                     print ("La clé " + i + "n'existe pas")
             result.append(array)
@@ -28,8 +35,13 @@ class CreateFromCSV:
         array = CreateFromCSV.create(data)
         for row in array:
             request = "Insert into " + data.getNomTable() + " values ("
+<<<<<<< HEAD
             for value in row:
                 request += value +", "
+=======
+            for value in dic:
+                request += "\"" + value.replace("\"","") +"\", "
+>>>>>>> ee46ef855b23dbd4ddbb1a691ee2ffb78c667077
             request = request[:len(request)-2]
             request += ")"
             print (request)
