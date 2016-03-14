@@ -20,5 +20,6 @@ def result():
 	t = Traitement()
 	installations = t.getInstallations(activite, ville)
 	output = template('result', installations = installations)
+	return output
 
 run(host="localhost", port=8000, debug=True)

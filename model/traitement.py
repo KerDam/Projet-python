@@ -12,5 +12,6 @@ class Traitement(object):
 		return self.dao.select("select distinct `Code INSEE`, `Nom de la commune` from installations order by `Nom de la commune`")
 
 	def getInstallations(self, actcode, insee):
-		return 	
+		installations = [["3","rue maréchal joffre", "44000", "nantes", "47.2230865", "-1.546768"],["1","rue je sais pas", "44000", "carquefou", "47.2823186", "-1.5227437"]]
+		return 	installations
 
