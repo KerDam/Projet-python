@@ -12,7 +12,7 @@ class Dao :
 	def connexionDb(self) :
 		""" Permet de se connecter à la base de données """
 		try :
-			self.connexion = mysql.connect(user=self.username, password=self.password, host="infoweb", database=self.base)
+			self.connexion = mysql.connect(user=self.username, password=self.password, host="localhost", database=self.base)
 		except mysql.connector.Error as err :
   			if err.errno == errorcode.ER_ACCESS_DENIED_ERROR :
   				print("Something is wrong with your user name or password")
@@ -31,6 +31,8 @@ class Dao :
 			self.connexionDb()
 		cursor = self.connexion.cursor()
 		cursor.execute(request)
+
+	def commit(self):
 		self.connexion.commit()
 
 	def select(self,request):
@@ -39,18 +41,3 @@ class Dao :
 		cursor = self.connexion.cursor()
 		cursor.execute(request)
 		return cursor.fetchall()
-	#:cursor contains the values
-		
-
-		# def preparedInsert(self, request, data):
-		# 	if self.connexion == None:
-		# 		self.connexionDb()
-		# 	statement = request + "Values ("
-		# 	for i in len(data.keys())
-		# 		statement += "%s,"
-		# 	statement = statement[:len(statement)-1]
-		# 	cursor = self.connexion.cursor()
-		# 	cursor.execute(statement, data)
-		# 	for i in data.values():
-
-	
