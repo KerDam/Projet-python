@@ -1,4 +1,18 @@
 <html>
+<<<<<<< HEAD
+<table>
+	%for result in results:
+<tr>
+	<td>{{result[0]}}</td>
+	<td>{{result[1]}}</td>
+	<td>{{result[2]}}</td>
+	<td>{{result[3]}}</td>
+	<td>{{result[4]}}</td>
+</tr>
+	%end
+</table>
+</html>
+=======
 
 
     <head> <!--https://openclassrooms.com/courses/google-maps-javascript-api-v3-->
@@ -78,3 +92,4 @@
     </body>
 
 </html>
+>>>>>>> ee46ef855b23dbd4ddbb1a691ee2ffb78c667077
