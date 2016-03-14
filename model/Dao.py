@@ -12,7 +12,7 @@ class Dao :
 
     def connexionDb(self) :
         try :
-            self.connexion = mysql.connect(user=self.username, password=self.password, host="infoweb", database=self.base)
+            self.connexion = mysql.connect(user=self.username, password=self.password, host="localhost", database=self.base)
         except mysql.connector.Error as err :
             if err.errno == errorcode.ER_ACCESS_DENIED_ERROR :
                 print("Something is wrong with your user name or password")

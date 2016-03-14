@@ -1,19 +1,4 @@
 <html>
-<<<<<<< HEAD
-<table>
-	%for result in results:
-<tr>
-	<td>{{result[0]}}</td>
-	<td>{{result[1]}}</td>
-	<td>{{result[2]}}</td>
-	<td>{{result[3]}}</td>
-	<td>{{result[4]}}</td>
-</tr>
-	%end
-</table>
-</html>
-=======
-
 
     <head> <!--https://openclassrooms.com/courses/google-maps-javascript-api-v3-->
 
@@ -78,7 +63,7 @@
     <body>
 
     <!-- Récupération du code postal et du nom de la ville -->
-        %ville = installations[0][2]+" "+installations[0][3]
+        %ville = str(installations[0][2])+" "+str(installations[0][3])
     <!-- Récupération des longitudes et latitudes de toutes les installations sportives -->
         %longitudes, latitudes = [], []
     	%for installation in installations :
@@ -92,4 +77,3 @@
     </body>
 
 </html>
->>>>>>> ee46ef855b23dbd4ddbb1a691ee2ffb78c667077

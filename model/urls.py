@@ -16,13 +16,22 @@ def index():
     return output
 
 
+# @route('/result', method = 'POST')
+# def result():
+	# activite = request.forms.get('activite')
+	# ville = request.forms.get('ville')
+	# t = Traitement()
+	# installations = t.getInstallations(activite, ville)
+	# output = template('result', installations = installations)
+	# return output
+
 @route('/result', method = 'POST')
 def result():
 	activite = request.forms.get('activite')
 	ville = request.forms.get('ville')
 	t = Traitement()
 	installations = t.getInstallations(activite, ville)
-	output = template('result', installations = installations)
+	output = template('affichageIns', installations = installations)
 	return output
 
 

@@ -5,8 +5,8 @@ from Dao import Dao
 class CreateFromCSV:
 
     def __init__(self):
-        self.db = Dao ("E146084M", "E146084M", "E146084M")
-        # self.db = Dao ("django", "django","django")
+        # self.db = Dao ("E146084M", "E146084M", "E146084M")
+       self.db = Dao ("django", "django","django")
 
     @staticmethod
     def create(data):
