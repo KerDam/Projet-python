@@ -17,7 +17,7 @@ class CreateFromCSV:
             array = []
             for i in data.getAttributs():
                 try:
-                    tmp = row[i[0]].replace (" ", "")
+                    tmp = row[i[0]].strip()
                     array.append(tmp if tmp.isnumeric() else "\"" + tmp.replace("\"", "\\\"") + "\"")
                 except KeyError:
                     print ("La clé " + i + "n'existe pas")
@@ -32,7 +32,6 @@ class CreateFromCSV:
                 request += value +", "
             request = request[:len(request)-2]
             request += ")"
-            print (request)
             self.db.insert(request)
         self.db.commit()
 

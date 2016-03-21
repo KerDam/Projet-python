@@ -5,7 +5,7 @@ from traitement import Traitement
 
 @route('/test')
 def test():
-	return ("test, c'est bon j'ai reussi a faire fonctionnner un serveur je suis trop content je ne sais pas qoui faire d'autre")
+        return ("test, c'est bon j'ai reussi a faire fonctionnner un serveur je suis trop content je ne sais pas qoui faire d'autre")
 
 @route('/')
 def index():
@@ -18,21 +18,24 @@ def index():
 
 # @route('/result', method = 'POST')
 # def result():
-	# activite = request.forms.get('activite')
-	# ville = request.forms.get('ville')
-	# t = Traitement()
-	# installations = t.getInstallations(activite, ville)
-	# output = template('result', installations = installations)
-	# return output
+        # activite = request.forms.get('activite')
+        # ville = request.forms.get('ville')
+        # t = Traitement()
+        # installations = t.getInstallations(activite, ville)
+        # output = template('result', installations = installations)
+        # return output
 
 @route('/result', method = 'POST')
 def result():
-	activite = request.forms.get('activite')
-	ville = request.forms.get('ville')
-	t = Traitement()
-	installations = t.getInstallations(activite, ville)
-	output = template('affichageIns', installations = installations)
-	return output
+        activite = request.forms.get('activite')
+        ville = request.forms.get('ville')
+        t = Traitement()
+        installations = t.getInstallations(activite, ville)
+        if len(installations) > 0:
+            output = template('affichageIns', installations = installations)
+        else:
+            output = template('affichageResultNull')
+        return output
 
 
 run(host="localhost", port=8000, debug=True)

@@ -24,10 +24,11 @@ class Dao :
 
     def deconnexion(self):
         self.connexion.close()
+        self.connexion = None
 
     def insert(self,request):
-        #if self.connexion == None:
-        self.connexionDb()
+        if self.connexion == None:
+            self.connexionDb()
         cursor = self.connexion.cursor()
         cursor.execute(request)
         
@@ -36,9 +37,9 @@ class Dao :
         self.deconnexion()
 
     def select(self,request):
-        self.connexionDb()
+        if self.connexion == None:
+            self.connexionDb()
         cursor = self.connexion.cursor()
         cursor.execute(request)
-        self.deconnexion()
         return cursor.fetchall()
 
