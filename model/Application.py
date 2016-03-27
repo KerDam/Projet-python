@@ -9,7 +9,7 @@ from Data import Data
 	- les différents attributs sont précisés dans attributsInstallation """
 	
 
-attributsEquipement = [["ComInsee","int"], ["ComLib","int"], ["InsNumeroInstall","int"], ["InsNom","varchar(255)"], ["EquipementId","int"], ["EquNom","varchar(255)"]]
+attributsEquipement = [["ComInsee","int"], ["ComLib","int"], ["InsNumeroInstall","int"], ["InsNom","varchar(255)"], ["EquipementId","int"], ["EquNom","varchar(255)"], ["EquGpsX","varchar(255)"],["EquGpsY","varchar(255)"]]
 attributsActivite = [["ComInsee","int"],["ComLib","varchar(255)"],["EquipementId","int"],["EquNbEquIdentique","varchar(255)"],["ActCode","int"],["ActLib","varchar(255)"]]
 attributsInstallation = [["Nom usuel de l'installation","varchar(255)"],["Numéro de l'installation","int"],["Nom de la commune","varchar(255)"],["Code INSEE","int"],["Code postal","int"],["Nom du lieu dit","varchar(255)"],["Numero de la voie","int"],["Nom de la voie","varchar(255)"],["location","varchar(255)"],["Longitude","varchar(255)"],["Latitude","varchar(255)"],["Aucun aménagement d'accessibilité","varchar(255)"]]
 

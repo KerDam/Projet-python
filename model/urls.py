@@ -1,12 +1,11 @@
-
-from bottle.bottle import route, run, debug, template, post, request
+from bottle.bottle import route, run, debug, template, post, request, static_file
 from traitement import Traitement
 
 
-@route('/test')
-def test():
-        return ("test, c'est bon j'ai reussi a faire fonctionnner un serveur je suis trop content je ne sais pas qoui faire d'autre")
-
+"""/*
+    Function: index
+    This will be the home page of the server, it will display all the activities and the city in the database 
+*/"""
 @route('/')
 def index():
     t = Traitement()
@@ -16,15 +15,10 @@ def index():
     return output
 
 
-# @route('/result', method = 'POST')
-# def result():
-        # activite = request.forms.get('activite')
-        # ville = request.forms.get('ville')
-        # t = Traitement()
-        # installations = t.getInstallations(activite, ville)
-        # output = template('result', installations = installations)
-        # return output
-
+"""/*
+    Function: result
+    After selecting the activity and the city, this page will print the result matching the city and the activity wanted 
+*/"""
 @route('/result', method = 'POST')
 def result():
         activite = request.forms.get('activite')
@@ -37,5 +31,16 @@ def result():
             output = template('affichageResultNull')
         return output
 
+"""/*
+    Function: css
+    This function will return the css file
+*/"""
+@route("/semantic/<filename>")
+def semantic(filename):
+    return static_file(filename, root='semantic/')
+
+@route("/scripts/<filename>")
+def semantic(filename):
+    return static_file(filename, root='scripts/')
 
 run(host="localhost", port=8000, debug=True)

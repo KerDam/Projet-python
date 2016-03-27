@@ -14,7 +14,7 @@ class Traitement(object):
 
 
 	def getInstallations(self, activite, ville):
-            return self.dao.select("select `Numero de la voie`,`Nom de la voie`, `Code postal`, `Nom de la commune`, longitude, latitude from installations, (select InsNumeroInstall from equipements where equipements.EquipementId in (select EquipementId from activites where ActCode = "+activite+" and ComInsee = "+ville+")) equ where installations.`Numéro de l installation` = equ.InsNumeroInstall")
+            return self.dao.select("select `Nom usuel de l installation`, `Numero de la voie`,`Nom de la voie`, `Code postal`, `Nom de la commune`, EquGpsX , EquGpsY from installations, (select InsNumeroInstall , EquGpsX, EquGpsY from equipements where equipements.EquipementId in (select EquipementId from activites where ActCode = "+activite+" and ComInsee = "+ville+"))  equ where installations.`Numéro de l installation` = equ.InsNumeroInstall")
 
 
 	def getVilles(self):
