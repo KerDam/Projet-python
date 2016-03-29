@@ -1,4 +1,6 @@
 class Data :
+	""" Classe qui permet de lier un fichier csv à une table sql 
+	et définir les attributs que l'on souhaite insérer dans la table """
 
 	def __init__(self, fichier, nomTable, attributs) :
 
