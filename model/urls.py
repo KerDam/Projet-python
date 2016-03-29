@@ -1,5 +1,5 @@
-from bottle.bottle import route, run, debug, template, post, request, static_file
-from traitement import Traitement
+from views.bottle.bottle import route, run, debug, template, post, request, static_file
+from insert.traitement import Traitement
 
 
 """/*
@@ -11,7 +11,7 @@ def index():
     t = Traitement()
     activites = t.getActivites()
     villes = t.getVilles()
-    output = template('index', activites = activites, villes = villes)
+    output = template('views/index', activites = activites, villes = villes)
     return output
 
 
@@ -26,9 +26,9 @@ def result():
         t = Traitement()
         installations = t.getInstallations(activite, ville)
         if len(installations) > 0:
-            output = template('affichageIns', installations = installations)
+            output = template('views/affichageIns', installations = installations)
         else:
-            output = template('affichageResultNull')
+            output = template('views/affichageResultNull')
         return output
 
 """/*
@@ -37,10 +37,10 @@ def result():
 */"""
 @route("/semantic/<filename>")
 def semantic(filename):
-    return static_file(filename, root='semantic/')
+    return static_file(filename, root='views/semantic/')
 
 @route("/scripts/<filename>")
 def semantic(filename):
-    return static_file(filename, root='scripts/')
+    return static_file(filename, root='views/scripts/')
 
 run(host="localhost", port=8000, debug=True)

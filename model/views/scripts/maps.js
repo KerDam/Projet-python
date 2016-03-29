@@ -7,7 +7,7 @@ $('document').ready(function(){
             mapInit([tds.eq(2).text(),tds.eq(1).text()]);
             mapSet = true;
         }
-        addToMap([tds.eq(2).text(),tds.eq(1).text()],tds.eq(0).text());
+        addToMap([tds.eq(2).text(),tds.eq(1).text()],tds.eq(0).text()+'<br/>'+tds.eq(3).text()+" "+tds.eq(4).text()+" "+tds.eq(5).text());
     });
 });
 function mapInit(coordonates){
